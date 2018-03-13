@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="//www.wan.com/Public/www/ddt/style/images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+
+<body id="app">
+    <div id="sevenRoadTop" style="<%=none%>">
+        <script src="//www.wan.com/Public/www/platform/style/scripts/sevenRoadTop.js"></script>
+    </div>
+    <div id="wrapper" class="page">
+        <a id="logo" class="<%=logo3%>" target="_blank" href="<%=homepage%>"></a>
+        <div id="navigation">
+            <a id="_4399" class="btn<%=_4399%>" target="_blank" href="http://www.4399.com">
+                4399小游戏
+            </a>
+            <a id="enter" class="btn" target="_blank" href="<%=enter%>">
+                进入游戏
+            </a>
+            <a id="homepage" class="btn" target="_blank" href="<%=homepage%>">
+                官网首页
+            </a>
+            <a id="share" class="btn bdsharebuttonbox" data-cmd="tsina">
+                分享微博
+            </a>
+        </div>
+
+        <div class="left-side-box">
+            <li class="num-0"></li>
+            <li class="num-1"></li>
+            <li class="num-2"></li>
+            <li class="num-3"></li>
+            <li class="num-4"></li>
+        </div>
+
+        <div class="sub-title-box">
+            <li class="sub-0"></li>
+            <li class="sub-1"></li>
+            <li class="sub-2"></li>
+            <li class="sub-3"></li>
+        </div>
+
+        <div class="cnt-box">
+            <div class="paragraph">
+                <div class="subheading">任务时间：</div>
+                <div class="represent" id="date"></div>
+            </div>
+            <div class="paragraph">
+                <div class="subheading">任务描述：</div>
+                <div class="represent" id="desc"></div>
+            </div>
+            <div class="paragraph">
+                <div class="subheading">完成条件：</div>
+                <div class="represent" id="condition"></div>
+            </div>
+            <div class="paragraph">
+                <div class="subheading">任务奖励：</div>
+                <div class="represent" id="prz"></div>
+            </div>
+        </div>
+
+        <div id="title"></div>
+    </div>
+    <div id="sevenRoadBlackFooter" style="<%=none%>">
+        <script src="//www.wan.com/Public/www/platform/style/scripts/sevenRoadBlackFooter.js"></script>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        _bd_share_config = {
+            common: {
+                bdText: document.title,
+                bdDesc: document.title,
+                bdUrl: window.cdnPath,
+                bdPic: 'http://ddt.wan.com/Public/images/logo<%=bdPic%>.png'
+            },
+            share: [{
+                bdCustomStyle: window.cdnPath + '/css/style.css'
+            }]
+        }
+        0[(document.getElementsByTagName('head')[0] || document.body).appendChild(document.createElement('script')).src = '//bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+    <script>
+        !location.hash && (location.hash = '#0')
+        var index = getHash()
+        var subIndex = [
+            0, 0, 0
+        ]
+        var Dom = (function () {
+            var leftSideBox = $('.left-side-box')
+            var subTitleBox = $('.sub-title-box')
+            var subTitleBoxLi = subTitleBox.find('li')
+            var date = $('#date')
+            return {
+                leftSideBox: leftSideBox,
+                subTitleBox: subTitleBox,
+                subTitleBoxLi: subTitleBoxLi,
+                date: date,
+                desc: $('#desc'),
+                condition: $('#condition'),
+                prz: $('#prz')
+            }
+        })()
+        function getHash() {
+            return location.hash.slice(1, 2)
+        }
+        function menuRender(index) {
+            if (index == 3) {
+                Dom.subTitleBox.addClass('wwfs')
+            } else {
+                Dom.subTitleBox.removeClass('wwfs')
+            }
+            $('.num-' + index).addClass('on').siblings().removeClass('on');
+            $('.sub-' + subIndex[index]).addClass('on').siblings().removeClass('on');
+            subMenuRender()
+            contentRender()
+        }
+        function subMenuRender() {
+            var i = 0
+            if (index == 3) {
+                Dom.subTitleBoxLi.eq(i).html(datas[index][i]['name'])
+            } else {
+                for (; i < 4; i++) {
+                    Dom.subTitleBoxLi.eq(i).html(datas[index][i]['name'])
+                }
+            }
+        }
+        function contentRender() {
+            var data = index == 3 ? datas[3][0] : datas[index][subIndex[index]]
+            Dom.date.html(data.date + ' ' + data.type)
+            Dom.desc.html(data.desc)
+            Dom.condition.html(data.condition + '（等级限制：' + data.level + '）')
+            Dom.prz.attr('class', 'represent ' + data.prize)
+        }
+        Dom.leftSideBox.on('click', 'li', function (item) {
+            var item = $(item.target)
+            index = item.prop('class').slice(4, 5);
+            if (getHash() != index) {
+                if (index == 4) {
+                    location.href = window.urlPath
+                } else {
+                    location.hash = index
+                    menuRender(index)
+                }
+            }
+        })
+        Dom.subTitleBox.on('click', 'li', function (item) {
+            if (index != 3) {
+                var item = $(item.target)
+                var i = item.prop('class').slice(4, 5) * 1;
+                if (i != subIndex[index]) {
+                    subIndex[index] = i
+                    $('.sub-' + i).addClass('on').siblings().removeClass('on');
+                    contentRender()
+                }
+            }
+        })
+        menuRender(index)
+    </script>
+</body>
+
+</html>
