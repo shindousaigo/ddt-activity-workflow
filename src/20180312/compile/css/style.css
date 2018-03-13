@@ -1,3 +1,7 @@
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -6,10 +10,10 @@ a {
   font-family: "Microsoft Yahei";
   font-size: 16px;
   padding: 0;
-  margin-left: -980px;
+  margin-left: -960px;
   overflow-x: hidden;
   position: absolute;
-  width: 1960px;
+  width: 1920px;
   height: 966px;
   left: 50%;
 }

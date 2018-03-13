@@ -1,8 +1,11 @@
 @import "./variable";
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
-    list-style: none;
 }
 
 #app {
