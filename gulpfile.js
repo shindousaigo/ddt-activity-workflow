@@ -68,7 +68,7 @@ gulp.task('connect', function () {
         .pipe(gulp.dest(config.compile))
         .pipe(connect.reload())
 }).task('sass', function () {
-    gulp.watch(config.src + '/sass/style.scss', ['sass_'])
+    gulp.watch(config.src + '/sass/**/*.scss', ['sass_'])
 }).task('sass_', function () {
     gulp.src(config.src + '/sass/style.scss')
         .pipe(sass({
