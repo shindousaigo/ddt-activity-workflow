@@ -2,6 +2,10 @@ li {
   list-style: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -102,7 +106,8 @@ a {
   background: url(../images/font.png);
 }
 
-#wrapper.page .left-side-box li:hover, #wrapper.page .left-side-box li.on {
+#wrapper.page .left-side-box li:hover,
+#wrapper.page .left-side-box li.on {
   background-position-y: 25px;
 }
 
@@ -146,7 +151,8 @@ a {
   background: url(../images/sub-title-1.png);
 }
 
-#wrapper.page .sub-title-box li:hover, #wrapper.page .sub-title-box li.on {
+#wrapper.page .sub-title-box li:hover,
+#wrapper.page .sub-title-box li.on {
   color: #fff;
   background: url(../images/sub-title-0.png);
 }
@@ -190,7 +196,8 @@ a {
   width: 520px;
 }
 
-#wrapper.page .cnt-box .represent, #wrapper.page .cnt-box .subheading {
+#wrapper.page .cnt-box .represent,
+#wrapper.page .cnt-box .subheading {
   float: left;
   font-size: 14px;
   line-height: 22px;
