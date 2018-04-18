@@ -1,0 +1,152 @@
+@import "./variable";
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#app {
+  font-family: $app_font;
+  font-size: $app_fsize;
+  width: $app_width;
+  height: $app_height;
+  padding: 0;
+  margin-left: $app_width/-2;
+  overflow-x: hidden;
+  position: absolute;
+  left: 50%;
+}
+
+#wrapper {
+  position: relative;
+  width: $app_width;
+  height: $app_height;
+  embed {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  #logo {
+    left: $logo_left;
+    top: $logo_top;
+    cursor: pointer;
+    position: absolute;
+    width: 200px;
+    height: 90px;
+    background: url(http://ddt.wan.com/Public/images/logo.png);
+    &.logo3 {
+      background: url(http://ddt.wan.com/Public/images/logo3.png);
+    }
+  }
+  #navigation {
+    top: $navigation_top;
+    left: $navigation_left;
+    position: absolute;
+    .btn {
+      margin-left: $btn_margin_left;
+      line-height: $btn_height;
+      width: $btn_width;
+      height: $btn_height;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 700;
+      float: left;
+    }
+    #_4399 {
+      display: none;
+      &._4399 {
+        display: block;
+      }
+      background: url(../images/4399.png);
+    }
+    #homepage {
+      background: url(../images/website.png);
+    }
+  }
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin: -.5*670px 0 0 -.5*1007px;
+  height: 670px;
+  width: 1007px;
+  background: url(../images/pop.png);
+  z-index: 1000;
+}
+
+.pic {
+  position: absolute;
+}
+
+.pic._1 {
+  left: 308px;
+  top: 103px;
+  width: 399px;
+  height: 432px;
+  background: url(../images/_1.jpg);
+  display: none;
+}
+
+.pic._2 {
+  left: 209px;
+  top: 103px;
+  width: 597px;
+  height: 432px;
+  background: url(../images/_2.jpg);
+  display: none;
+}
+
+.pic._3 {
+  left: 190px;
+  top: 103px;
+  width: 640px;
+  height: 432px;
+  background: url(../images/_3.jpg);
+  display: none;
+}
+
+.pic._4 {
+  left: 215px;
+  top: 103px;
+  width: 611px;
+  height: 436px;
+  background: url(../images/_4.jpg);
+  display: none;
+}
+
+.close {
+  position: absolute;
+  left: 910px;
+  top: 83px;
+  height: 37px;
+  width: 37px;
+  cursor: pointer;
+}
+
+.cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .7;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.cover {
+  filter: alpha(opacity=70);
+}

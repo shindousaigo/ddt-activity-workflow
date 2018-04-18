@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="//www.wan.com/Public/www/ddt/style/images/favicon.ico">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+	<title></title>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="wrap_per">
+			<div id="page" class="page">
+				<div class="logo"></div>
+				<div class="navibar">
+					<div class="logbox">
+						<div class="login">親愛的用戶，請
+							<a class="login-in">登錄</a>
+						</div>
+						<div class="logined">歡迎
+							<span class="user-name"></span>，
+							<a class="login-out">退出</a>
+						</div>
+					</div>
+
+					<div class="home"></div>
+					<div class="music">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+				<div class="cards">
+					<div class="card">
+						<li class="n n1">
+							<i class="t"></i>
+						</li>
+						<div class="box">
+							<div class="block">
+								<div class="buttun">
+									挑戰時間
+								</div>
+								<div class="desc">
+									2018/04/03
+								</div>
+							</div>
+							<div class="block">
+								<div class="buttun">
+									挑戰内容
+								</div>
+								<div class="desc">
+									簽名來報到
+								</div>
+							</div>
+							<div class="block">
+								<div class="buttun">
+									活動說明
+								</div>
+								<div class="desc">
+									活動時間內登入會 員並簽到即可完成
+								</div>
+							</div>
+							<div class="clk qd" data-index="0"></div>
+						</div>
+					</div>
+					<div class="card">
+						<li class="n n2">
+							<i class="t"></i>
+						</li>
+						<div class="box">
+							<div class="block">
+								<div class="buttun">
+									挑戰時間
+								</div>
+								<div class="desc">
+									2018/04/04
+								</div>
+							</div>
+							<div class="block">
+								<div class="buttun">
+									挑戰内容
+								</div>
+								<div class="desc">
+									兒童節禮品
+								</div>
+							</div>
+							<div class="block">
+								<div class="buttun">
+									活動說明
+								</div>
+								<div class="desc">
+									活動時間內購買 『童玩禮包』 一份以上即可玩成！
+								</div>
+							</div>
+							<div class="clk lb" data-index="1"></div>
+						</div>
+					</div>
+					<div class="card">
+						<li class="n n3">
+							<i class="t"></i>
+						</li>
+						<div class="box">
+							<div class="block">
+								<div class="buttun">
+									挑戰時間
+								</div>
+								<div class="desc">
+									2018/04/05
+								</div>
+							</div>
+							<div class="block">
+								<div class="buttun">
+									挑戰内容
+								</div>
+								<div class="desc">
+									歡喜儲值趣
+								</div>
+							</div>
+							<div class="block">
+								<div class="buttun">
+									活動說明
+								</div>
+								<div class="desc">
+									活動時間內於會 員帳號內單筆儲 值500點以上。
+								</div>
+							</div>
+							<div class="clk cc" data-index="2"></div>
+							<div class="notice" id="notice"></div>
+						</div>
+					</div>
+					<div class="card">
+						<li class="n n4">
+							<i class="t"></i>
+						</li>
+						<div class="box">
+							<div class="block" style="font-size: 16px;line-height: 24px;">
+								<div style="text-indent: 36px;">
+									成功通過所有關卡的會員，將獲得大人小孩都愛吃的『酷聖石冰淇淋 Like It歡樂禮券』和『7-11現金禮物』之抽獎資格
+								</div>
+								<div>獎勵內容：</div>
+								<div>1. Like It歡樂禮券(共十份)</div>
+								<div>2. 7-11現金禮券100元(共二十份)</div>
+								<div style="font-size:14px; margin-top:25px">註：全台任一COLD STONE門市均可使 用歡樂禮券(市價165元)，無使用 期限。</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="embed" class="embed">
+				<embed type="application/x-shockwave-flash" allownetworking="all" allowscriptaccess="always" src="loading.swf" quality="high"
+				 wmode="transparent" allowfullscreen="true">
+				<div class="logo"></div>
+				<div class="navibar">
+					<div class="home"></div>
+					<div class="music">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cover"></div>
+	<div class="pop game">
+		<div class="close" data-index="0"></div>
+		<div class="title">
+			請選擇遊戲
+		</div>
+		<div class="box"></div>
+		<div class="confirm">
+			確認
+		</div>
+	</div>
+
+	<div class="pop notice">
+		<div class="close" data-index="1"></div>
+		<div class="txt-notice"></div>
+	</div>
+
+	<div class="pop serial">
+		<div class="close" data-index="2"></div>
+		<div class="title">
+			禮包序列號
+		</div>
+		<div class="box"></div>
+	</div>
+
+	<audio autoplay="autoplay" id="audio">
+		<source src="./images/music.mp3" type="audio/mpeg">
+	</audio>
+	<script>
+		var user = $.ms.member.user;
+		var ms = $.ms;
+		var m_ = $('.login_main')
+		$(".login-out").click(function () {
+			ms.member.logout();
+		});
+		if (user) {
+			$('.user-name').html(user.LOGIN_ACCOUNT);
+			$('.username').html(user.LOGIN_ACCOUNT);
+			$('.login').hide();
+			$('.logined').show();
+		} else {
+			// m_.show()
+		}
+		$('.login-in').click(function () {
+			m_.show()
+		})
+	</script>
+
+	<script>
+		var
+			curScene = 0,
+			moving = false,
+			lastTime = null,
+			now = null,
+			isTop = null,
+			isBottom = null,
+			isEfunfun = location.host.indexOf('efunfun') > 0,
+			btnIsShaking = [
+				false,
+				false,
+				false
+			],
+			gameId = 0,
+			serverId = 0,
+			interface2 = false,
+			temp1 = {
+				efunfun: [
+					0, 1, 2, 3
+				],
+				baba: [
+					0, 1
+				],
+				game: {
+					name: [
+						'星曲',
+						'彈彈堂',
+						'天啟',
+						'臥龍吟'
+					],
+					id: [
+						2, 3, 4, 1
+					]
+				}
+			},
+			gameList = isEfunfun ? temp1.efunfun : temp1.baba,
+			main = new Main(),
+			hasScrollBar = HasScrollBar();
+
+		$.getJSON('http://interface.efunfun.com/activity/children2018/finish', function (data) {
+			if (data.status === 1) {
+				if (data.sign > 0) {
+					main.dom.clk.eq(0).addClass('on')
+				}
+				if (data.pay > 0) {
+					main.dom.clk.eq(2).addClass('on')
+				}
+			}
+		})
+
+		$.getJSON('http://interface.efunfun.com/activity/children2018/record', function (data) {
+			if (data.status === 1) {
+				for (var i in data) {
+					str += '<div>' + data[i].CARD + '</div>';
+				}
+				main.dom.popserial.find('.box').append(str)
+			}
+		})
+
+		main.dom.audio.addEventListener("canplaythrough", function () {
+			!main.dom.music.hasClass('stop') && main.dom.audio.play()
+		}, false);
+
+		// 给页面绑定滑轮滚动事件
+		if (document.addEventListener) {
+			document.addEventListener('DOMMouseScroll', throttle(scrollFunc, 16), false);
+		}
+		// 滚动滑轮触发scrollFunc方法
+		window.onmousewheel = document.onmousewheel = throttle(scrollFunc, 16);
+
+		window.onresize = function () {
+			hasScrollBar = HasScrollBar()
+		}
+
+		function callJsFun(param) {
+			main.toggle()
+		}
+
+		function getScrollBody() {
+			return document.documentElement || document.body
+		}
+
+		function throttle(func, wait) {
+			lastTime = null
+			return function () {
+				now = new Date()
+				if (now - lastTime - wait > 0) {
+					func()
+					lastTime = now
+				}
+			}
+		}
+
+		function HasScrollBar() {
+			return main.dom.scroller.scrollHeight > main.dom.scroller.clientHeight
+		}
+
+		function goUp(isTop, isBottom) {
+			if (hasScrollBar) {
+				isTop && curScene && main.toggle()
+			} else {
+				curScene && main.toggle()
+			}
+		}
+
+		function goDown(isTop, isBottom) {
+			if (hasScrollBar) {
+				isBottom && !curScene && main.toggle()
+			} else {
+				!curScene && main.toggle()
+			}
+		}
+
+		function scrollFunc(e) {
+			isTop = (main.dom.scroller.scrollTop === 0)
+			isBottom = isTop ? false : (main.dom.scroller.scrollHeight - main.dom.scroller.scrollTop === main.dom.scroller.clientHeight)
+
+			e = e || window.event;
+			if (e.wheelDelta) {  // 判断浏览器IE，谷歌滑轮事件             
+				if (e.wheelDelta > 0) { // 当滑轮向上滚动时
+					goUp(isTop, isBottom)
+				}
+				if (e.wheelDelta < 0) { // 当滑轮向下滚动时
+					goDown(isTop, isBottom)
+				}
+			} else if (e.detail) {  // Firefox滑轮事件
+				if (e.detail > 0) { // 当滑轮向上滚动时
+					goUp(isTop, isBottom)
+				}
+				if (e.detail < 0) { // 当滑轮向下滚动时
+					goDown(isTop, isBottom)
+				}
+			}
+
+		}
+
+		function Main() {
+			Main.prototype.dom = (function () {
+				var dom = {}
+				dom.embed = $('#embed')
+				dom.page = $('#page')
+				dom.scroller = getScrollBody()
+				dom.logo = $('.logo')
+				dom.clk = $('.clk')
+				dom.popgame = $('.pop.game')
+				dom.popnotice = $('.pop.notice')
+				dom.cover = $('.cover')
+				dom.close = $('.close')
+				dom.notice = $('#notice')
+				dom.music = $('.music')
+				dom.home = $('.home')
+				dom.audio = document.getElementById('audio')
+				dom.box = $('.pop.game .box')
+				dom.popserial = $('.pop.serial')
+				dom.comfirm = $('.confirm')
+				// {1}
+				// {3}
+				var html = ''
+				for (var i = 0; i < gameList.length; i++) {
+					var id = temp1.game.id[gameList[i]]
+					var name = temp1.game.name[gameList[i]]
+					if (id === 4) {
+						//初始化天啟服务器
+						var optionHtml = '', serverName
+						for (var j = 0; j < 55; j++) {
+							if (j == 0) {
+								serverName = '請選擇伺服器';
+							} else {
+								serverName = j + '服';
+							}
+							optionHtml += '<option value="' + j + '">' + serverName + '</option>';
+						}
+						name += '<select class="server-select">' + optionHtml + '</select>'
+					}
+					html += '<div class="item" data-id="' + id + '">' + name + '</div>'
+				}
+				dom.popgame.find('.box').html(html)
+				dom.server = $('.server-select')
+				isEfunfun ? dom.logo.addClass('efunfun') : dom.logo.addClass('baba')
+
+				// {2} bindevents
+				dom.clk.mouseenter(function (item) {
+					item = $(item.target)
+					var i = item.data('index') * 1
+					if (!btnIsShaking[i]) {
+						btnIsShaking[i] = true
+						TweenMax.from(item, .75, {
+							x: 20,
+							ease: Elastic.easeOut.config(2, 0.1),
+							onComplete: function () {
+								btnIsShaking[i] = false
+							}
+						})
+					}
+				})
+				dom.box.on('click', '.item', function (item) {
+					item = $(item.target)
+					item.addClass('on').siblings().removeClass('on')
+					gameId = item.data('id')
+					if (gameId == 4) {
+						serverId = dom.server.val()
+					} else {
+						serverId = 0
+					}
+				})
+				dom.comfirm.click(function () {
+					if (gameId == 4 && serverId == 0) {
+						alert('請選擇服務器')
+						return
+					}
+					if (!interface2) {
+						interface2 = true
+						$.getJSON('http://interface.efunfun.com/activity/children2018/act2?game_id=' + gameId + '&server_id=' + serverId, function (data) {
+							interface2 = false
+							if (data.status === 1) {
+								main.showPop(main.dom.popserial)
+								main.dom.popserial.find('.box').append(
+									'<div>' + data[i].card + '</div>'
+								)
+							} else {
+								alert(data.msg)
+							}
+						})
+					}
+				})
+				dom.clk.click(function (item) {
+					if (!user) {
+						m_.show()
+						return
+					}
+					item = $(item.target)
+					var i = item.data('index') * 1
+					switch (i) {
+						case 0:
+							var hasOn = item.hasClass('on')
+							if (hasOn) return;
+							$.getJSON('http://interface.efunfun.com/activity/children2018/act1', function (data) {
+								if (data.status === 1) {
+									main.dom.clk.eq(0).addClass('on')
+									alert('簽到成功')
+								} else {
+									alert(data.msg)
+								}
+							})
+							break;
+						case 1:
+							main.showPop(main.dom.popgame)
+							break;
+						case 2:
+							if (isEfunfun) {
+								window.open('http://www.efunfun.com/GamePoint/')
+							} else {
+								window.open('http://www.88box.com/pay')
+							}
+							break;
+					}
+				})
+				dom.close.click(function (item) {
+					item = $(item.target)
+					var i = item.data('index') * 1
+					switch (i) {
+						case 0:
+							main.hidePop(main.dom.popgame)
+							break;
+						case 1:
+							main.hidePop(main.dom.popnotice)
+							break;
+						case 2:
+							main.hidePop(main.dom.popserial)
+							break;
+					}
+				})
+				dom.notice.click(function () {
+					main.showPop(main.dom.popnotice)
+				})
+				dom.music.click(function () {
+					var isStop = dom.music.hasClass('stop')
+					if (isStop) {
+						dom.music.removeClass('stop')
+						dom.audio.play()
+					} else {
+						dom.music.addClass('stop')
+						dom.audio.pause()
+					}
+				})
+				dom.home.click(function () {
+					if (isEfunfun) {
+						window.open('http://www.efunfun.com/')
+					} else {
+						window.open('http://www.88box.com/')
+					}
+				})
+				dom.logo.click(function () {
+					if (isEfunfun) {
+						window.open('http://www.efunfun.com/')
+					} else {
+						window.open('http://www.88box.com/')
+					}
+				})
+
+				// return
+				return dom
+			})()
+			Main.prototype.showPop = function (dom) {
+				TweenMax.from(dom, .75, {
+					onStart: function () {
+						dom.show()
+						main.dom.cover.show()
+					},
+					opacity: 0,
+					scale: 0,
+					ease: Elastic.easeOut.config(1.5, 1),
+				})
+			}
+			Main.prototype.hidePop = function (dom) {
+				main.dom.cover.hide()
+				dom.hide()
+			}
+			Main.prototype.toggle = function () {
+				if (!moving) {
+					moving = true
+					if (!curScene) {
+						curScene = 1
+						this.dom.page.css('z-index', 1)
+						this.dom.embed.css('z-index', 0)
+						TweenMax.to(this.dom.embed, .75, {
+							x: '-50%',
+							opacity: 0
+						})
+						TweenMax.to(this.dom.page, .75, {
+							delay: .25,
+							x: '0%',
+							opacity: 1,
+							onComplete: function () {
+								moving = false
+							}
+						})
+					} else {
+						curScene = 0
+						this.dom.page.css('z-index', 0)
+						this.dom.embed.css('z-index', 1)
+						TweenMax.to(this.dom.page, .75, {
+							x: '50%',
+							opacity: 0
+						})
+						TweenMax.to(this.dom.embed, .75, {
+							delay: .25,
+							x: '0%',
+							opacity: 1,
+							onComplete: function () {
+								moving = false
+							}
+						})
+					}
+				}
+			}
+		}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>
+	<!-- 项目需要用到的功能-->
+	<!--  有按钮要打开网址时，urls=“1”，没有按钮要打开网址时，urls=“0”-->
+	<!--  有按钮链接到js函数时，jslinks=“1”，没有按钮链接到js函数时，jslinks=“0”-->
+	<!--  有需要加载swf时，swf="1" ，不需要加载任何swf时，swf="0"-->
+	<!--  有需要加载播放视频时，videos="1"，不需要加载播放视频时，videos="0"-->
+	<fun urls="0" jslinks="1" swf="1" videos="0"/>
+	
+	
+	<!-- 屏幕功能 -->
+	<!-- 点击屏幕任何一处都响应事件时，fullscreenClicked="1"，不需要时，fullscreenClicked="0"-->
+	<!-- 点击屏幕任何一处响应的事件是网址链接时，urlstr的值是相应的网址如urlstr="http://sq.7road.com/serverList.html"，不需要链接网址时，urlstr="null"-->
+	<!-- 点击屏幕任何一处响应的事件是链接网页接口（js函数）时，jsFun的值是相应的网页接口（js函数）如jsFun="callJsFun"，不需要链接网页接口时，jsFun="null"-->
+	<!-- js函数传递的参数（不需要参数时为jsfunParams="";有参数就填相应参数，如jsfunParams="sanya"） -->
+	<!--fullscreen fullscreenClicked="1" urlstr="null" jsFun="beginGame"  jsfunParams="" /-->
+	<fullscreen fullscreenClicked="0" urlstr="null" jsFun="beginGame"  jsfunParams="" />
+	
+	<!-- 注册框里的开始游戏按钮在flash -->
+	<!--  注册框里的开始游戏按钮是否在flash，在flash里则isInFlash="1"，不在flash里则isInFlash="0"-->
+	<!--  注册框里的开始游戏按钮在flash里，点击此按钮需要打开网址则urlstr="http://sq.7road.com/serverList.html"，，不需要链接网址时，urlstr="null"-->
+	<!-- 注册框里的开始游戏按钮在flash里，点击此按钮响应的事件是链接网页接口（js函数）时，jsFun的值是相应的网页接口（js函数）如jsFun="callJsFun"，不需要链接网页接口时，jsFun="null" -->
+	<!-- 注册框里的开始游戏按钮在flash里，点击此按钮响应的事件是链接网页接口（js函数）时,不需要参数时为jsfunParams="";有参数就填相应参数，如jsfunParams="sanya" -->
+	<logicStartGameBtn isInFlash="0" urlstr="null" jsFun="logicStartGame"  jsfunParams="" />
+	
+	
+	<!-- 加载背景音乐功能 -->
+	<!-- 需要加载背景音乐时：needLoading="1"；不需要加载背景音乐时：needLoading="0" -->
+	<bgSound needLoading="0" url="bgSound.mp3" />
+	
+	
+	<!-- 按钮需要链接网址-->
+	<urls>
+		<!-- 按钮名字 | 按钮需要打开的网址 | 窗口打开类型，默认为空白窗口打开-->
+		<url btnname="tag_1_btn" urlstr="http://sq.7road.com/serverList.html" winType="_blank"/>
+	</urls>
+	
+	
+	
+	<!-- 按钮需要链接的网页接口（js函数）-->
+	<jslinks>
+		<!-- 按钮名字 | 按钮的网页接口 | 传递的参数（不需要参数时为params="";有参数就填相应参数，如params="sanya"）-->
+		<jslink btnname="tag_1_btn" jsFun="callJsFun" params="1" />
+		<jslink btnname="tag_2_btn" jsFun="callJsFun" params="2" />
+		<jslink btnname="tag_3_btn" jsFun="callJsFun" params="3" />
+		<jslink btnname="tag_4_btn" jsFun="callJsFun" params="4" />		
+	</jslinks>
+	
+	
+	
+	<!-- 需要加载swf-->
+	<!-- 加载swf时，是否要显示加载swf的进度。需要显示加载的进度时：needLoading="1"；不需要显示加载的进度时：needLoading="0" -->
+	<!-- 加载swf时，如果需要显示加载的进度并需要加载成功后调用js函数时：jsfun="callJsFun"；其余情况则：jsfun="null" -->
+	<swfs needLoading="1" jsfun="flashready">
+		<!-- id为swf加载到舞台上的层数，id越大，该swf就越放到最上层，例如：id="1"的swf会被id="2"的swf覆盖，而id="2"的swf又会被id="3"的swf覆盖，以此类推。。。 就像高楼,层数低的会被高楼层覆盖-->
+		<swf id="1">index.swf</swf>
+	</swfs>
+	
+	
+	<!-- 显示视频-->
+	<videos>
+		<!-- id="4"为视频swf的id -->
+		<!-- posX表示视频swf放在舞台上的x轴 -->
+		<!-- posY表示视频swf放在舞台上的y轴 -->
+		<video id="4" posX="200" posY="100" />
+	</videos>
+	
+ 
+	
+	
+	
+</xml>

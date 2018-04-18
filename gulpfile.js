@@ -12,6 +12,7 @@ var template = require('gulp-template');
 var nodeNeat = require('node-neat');
 var through = require('through2');
 var gulpSequence = require('gulp-sequence')
+
 var platform = {
     office: false,
     agent: false,
